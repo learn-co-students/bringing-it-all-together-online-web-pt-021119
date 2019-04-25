@@ -18,6 +18,11 @@ class Dog
     self
   end
 
+  def self.create(attr)
+    dog = self.new(attr)
+    binding.pry
+  end
+
   def self.create_table
     sql = <<-SQL
       CREATE TABLE IF NOT EXISTS dogs(
