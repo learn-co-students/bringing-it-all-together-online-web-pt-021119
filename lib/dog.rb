@@ -1,3 +1,5 @@
+require 'pry'
+
 class Dog
   attr_accessor :name, :breed
   attr_reader :id
@@ -26,7 +28,10 @@ class Dog
 
   end
 
-  def self.create(name:, breed:)
+  def self.create(hash)
+    dog = self.new(name: hash.name, breed: hash.breed)
+    dog.save
+    dog
   end
 
   def self.find_by_id(id)
